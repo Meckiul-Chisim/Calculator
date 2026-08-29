@@ -17,6 +17,7 @@ const Calc = () => {
     } else {
       setDisplay(display => display + operator);
     }
+    setLastInput("operator");
   }
 
   return (
