@@ -35,12 +35,12 @@ const Calc = () => {
   return (
     <div className='w-screen h-screen justify-center items-center flex'>
         <div className="w-auto flex flex-col justify-center items-center h-auto p-4 rounded-xl shadow-lg bg-slate-200">
-            <DisplayOutput display={display}/>
+            <DisplayOutput display={display} result={result}/>
             <FirstRows setDisplay={setDisplay} handleOperator={handleOperator}/>
             <SecRows setDisplay={setDisplay} handleOperator={handleOperator} />
             <ThirdRow setDisplay={setDisplay} handleOperator={handleOperator} />
             <FourthRow setDisplay={setDisplay} handleOperator={handleOperator}/>
-            <FiftRow setDisplay={setDisplay} handleOperator={handleOperator }/>
+            <FiftRow setDisplay={setDisplay} handleOperator={handleOperator } calculateResult={calculateResult}/>
         </div>
     </div>
   )
