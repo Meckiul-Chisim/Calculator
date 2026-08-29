@@ -13,11 +13,11 @@ const Calc = () => {
     <div className='w-screen h-screen justify-center items-center flex'>
         <div className="w-auto flex flex-col justify-center items-center h-auto p-4 rounded-xl shadow-lg bg-slate-200">
             <DisplayOutput display={display}/>
-            <FirstRows display={setDisplay}/>
-            <SecRows display={setDisplay} />
-            <ThirdRow display={setDisplay} />
-            <FourthRow display={setDisplay}/>
-            <FiftRow display={setDisplay}/>
+            <FirstRows setDisplay={setDisplay}/>
+            <SecRows setDisplay={setDisplay} />
+            <ThirdRow setDisplay={setDisplay} />
+            <FourthRow setDisplay={setDisplay}/>
+            <FiftRow setDisplay={setDisplay}/>
         </div>
     </div>
   )
