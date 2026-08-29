@@ -13,15 +13,19 @@ const Calc = () => {
   const [result, setResult] = useState("");
 
   const calculateResult = () => {
-    try{
-      const expression = display
-      .replaceAll("×", "*")
-      const evalResult = eval(expression);
-      setResult(evalResult);
-    } catch (error) {
-      console.error("Error calculating result:", error);
+    try {
+        const expression = display
+            .replaceAll("×", "*")
+            .replaceAll("÷", "/")
+            .replaceAll("−", "-");
+
+        const answer = Function(`"use strict"; return (${expression})`)();
+
+        setResult(answer.toString());
+    } catch {
+        setResult("Error");
     }
-  }
+}
 
   const handleOperator = (operator) => {
     if (lastInput === "operator") {
