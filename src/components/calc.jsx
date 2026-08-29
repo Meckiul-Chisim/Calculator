@@ -10,6 +10,18 @@ const Calc = () => {
 
   const [display, setDisplay] = useState("00");
   const [lastInput, setLastInput] = useState("number");
+  const [result, setResult] = useState("");
+
+  const calculateResult = () => {
+    try{
+      const expression = display
+      .replaceAll("×", "*")
+      const evalResult = eval(expression);
+      setResult(evalResult);
+    } catch (error) {
+      console.error("Error calculating result:", error);
+    }
+  }
 
   const handleOperator = (operator) => {
     if (lastInput === "operator") {
