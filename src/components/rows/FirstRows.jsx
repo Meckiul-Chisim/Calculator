@@ -30,7 +30,10 @@ const FirstRows = ({setDisplay}) => {
                 if(row.name === "allClear"){
                     setDisplay("00")
                 } else if (row.name === "delete"){
-                    setDisplay(display => display.slice(0, -1))
+                    setDisplay(display => {
+                        const newDisplay = display.slice(0, -1)
+                        return newDisplay || "00"
+                    })
                 } else {
                     setDisplay(display => display + row.icon)
                 }
