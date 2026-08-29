@@ -22,7 +22,7 @@ const minus = {
     icon: "–"
 }
 
-const ThirdRow = ({setDisplay}) => {
+const ThirdRow = ({setDisplay, handleOperator}) => {
   return (
     <div className='w-full flex justify-evenly items-center'>
         {rows.map((row) => (
@@ -30,7 +30,7 @@ const ThirdRow = ({setDisplay}) => {
                 {row.icon}
             </button>
         ))}
-        <button onClick={() => setDisplay(display => display + minus.icon)} className="w-15 h-15 p-4 rounded-full cursor-pointer text-red-500 hover:bg-slate-400 shadow-md text-lg m-1.5 transition ease-out">
+        <button onClick={() => handleOperator(minus.icon)} className="w-15 h-15 p-4 rounded-full cursor-pointer text-red-500 hover:bg-slate-400 shadow-md text-lg m-1.5 transition ease-out">
             {minus.icon}
         </button>
     </div>

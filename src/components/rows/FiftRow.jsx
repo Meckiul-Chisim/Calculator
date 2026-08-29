@@ -22,7 +22,7 @@ const equal = {
     icon: "="
 }
 
-const FiftRow = ({setDisplay}) => {
+const FiftRow = ({setDisplay, handleOperator}) => {
   return (
     <div className='w-full flex justify-evenly items-center'>
         {rows.map((row) => (
@@ -32,6 +32,8 @@ const FiftRow = ({setDisplay}) => {
                         if(display.includes(".")){
                             return display
                         }
+
+                        return display === "00" ? "0." : display + "."
                     })
                 } else {
                     setDisplay(display => display === "00" ? row.icon : display + row.icon)
@@ -41,7 +43,7 @@ const FiftRow = ({setDisplay}) => {
                 {row.icon}
             </button>
         ))}
-        <button onClick={() => setDisplay(display => display + equal.icon)} className="w-15 h-15 p-4 rounded-full text-red-500 hover:bg-slate-400 shadow-md text-lg m-1.5 transition ease-out cursor-pointer">
+        <button onClick={() => handleOperator(equal.icon)} className="w-15 h-15 p-4 rounded-full text-red-500 hover:bg-slate-400 shadow-md text-lg m-1.5 transition ease-out cursor-pointer">
             {equal.icon}
         </button>
     </div>

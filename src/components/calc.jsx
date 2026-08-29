@@ -8,16 +8,26 @@ import FiftRow from './rows/FiftRow'
 
 const Calc = () => {
 
-  const [display, setDisplay] = useState("00")
+  const [display, setDisplay] = useState("00");
+  const [lastInput, setLastInput] = useState("number");
+
+  const handleOperator = (operator) => {
+    if (lastInput === "operator") {
+      setDisplay(display => display.slice(0, -1) + operator);
+    } else {
+      setDisplay(display => display + operator);
+    }
+  }
+
   return (
     <div className='w-screen h-screen justify-center items-center flex'>
         <div className="w-auto flex flex-col justify-center items-center h-auto p-4 rounded-xl shadow-lg bg-slate-200">
             <DisplayOutput display={display}/>
-            <FirstRows setDisplay={setDisplay}/>
-            <SecRows setDisplay={setDisplay} />
-            <ThirdRow setDisplay={setDisplay} />
-            <FourthRow setDisplay={setDisplay}/>
-            <FiftRow setDisplay={setDisplay}/>
+            <FirstRows setDisplay={setDisplay} handleOperator={handleOperator}/>
+            <SecRows setDisplay={setDisplay} handleOperator={handleOperator} />
+            <ThirdRow setDisplay={setDisplay} handleOperator={handleOperator} />
+            <FourthRow setDisplay={setDisplay} handleOperator={handleOperator}/>
+            <FiftRow setDisplay={setDisplay} handleOperator={handleOperator }/>
         </div>
     </div>
   )

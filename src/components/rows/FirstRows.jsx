@@ -17,7 +17,7 @@ const rows = [
     },
 
     {
-        name: "divident",
+        name: "divide",
         icon: "÷"
     }
 ]
