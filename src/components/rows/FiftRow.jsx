@@ -22,7 +22,7 @@ const equal = {
     icon: "="
 }
 
-const FiftRow = ({setDisplay, calculateResult}) => {
+const FiftRow = ({setDisplay, calculateResult, setLastInput}) => {
   return (
     <div className='w-full flex justify-evenly items-center'>
         {rows.map((row) => (

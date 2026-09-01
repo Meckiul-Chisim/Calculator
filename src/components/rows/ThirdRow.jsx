@@ -19,7 +19,7 @@ const rows = [
 
 const minus = {
     name: "Minus",
-    icon: "–"
+    icon: "-"
 }
 
 const ThirdRow = ({setDisplay, handleOperator}) => {
