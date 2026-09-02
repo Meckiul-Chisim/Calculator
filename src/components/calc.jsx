@@ -28,13 +28,9 @@ const Calc = () => {
   }
 
   const handleOperator = (operator) => {
-    if (lastInput === "operator") {
-      setDisplay(display => display.slice(0, -1) + operator);
-    } else {
-      setDisplay(display => display + operator);
-    }
-
-    setLastInput("operator")
+    setDisplay("00")
+    setResult("")
+    setLastInput("number")
   }
 
   return (
