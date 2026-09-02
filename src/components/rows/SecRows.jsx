@@ -1,20 +1,9 @@
 import React from 'react'
 
 const rows = [
-    {
-        name: "seven",
-        icon: "7"
-    },
-
-    {
-        name: "eight",
-        icon: "8"
-    },
-
-    {
-        name: "nine",
-        icon: "9"
-    },
+    { name: "seven", icon: "7" },
+    { name: "eight", icon: "8" },
+    { name: "nine", icon: "9" },
 ]
 
 const multiply = {
@@ -22,11 +11,11 @@ const multiply = {
     icon: "×"
 }
 
-const SecRows = ({setDisplay, handleOperator}) => {
+const SecRows = ({handleNumber, handleOperator}) => {
   return (
     <div className='w-full flex justify-evenly items-center'>
         {rows.map((row) => (
-            <button onClick={() => setDisplay(display => display === "00" ? row.icon : display + row.icon)} className="w-15 h-15 p-4 rounded-full cursor-pointer text-slate-900 hover:bg-slate-400 shadow-md text-lg m-1.5 transition ease-out">
+            <button key={row.name} onClick={() => handleNumber(row.icon)} className="w-15 h-15 p-4 rounded-full cursor-pointer text-slate-900 hover:bg-slate-400 shadow-md text-lg m-1.5 transition ease-out">
                 {row.icon}
             </button>
         ))}
