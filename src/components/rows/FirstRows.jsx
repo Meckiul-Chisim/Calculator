@@ -22,28 +22,18 @@ const divide = {
     icon: "÷"
 }
 
-const FirstRows = ({setDisplay, setResult, handleOperator, setLastInput}) => {
+const FirstRows = ({handleClear, handleDelete, handleOperator}) => {
   return (
     <div className='w-full flex justify-evenly items-center'>
-        {rows.map((row) => (
-            <button onClick={() => {
-                if(row.name === "allClear"){
-                    setDisplay("00");
-                    setResult("")
-                    setLastInput("number")
-                } else if (row.name === "delete"){
-                    setDisplay((display) => {
-                        const newDisplay = display.slice(0, -1)
-                        return newDisplay || "00";
-                    })
-                } else {
-                    setDisplay(display => display + row.icon)
-                }
-            }} 
+        <button onClick={handleClear}
             className="w-15 h-15 p-4 rounded-full text-red-500 cursor-pointer hover:bg-slate-400 shadow-md text-lg m-2 transition ease-out">
-                {row.icon}
-            </button>
-        ))}
+            AC
+        </button>
+
+        <button onClick={handleDelete}
+            className="w-15 h-15 p-4 rounded-full text-red-500 cursor-pointer hover:bg-slate-400 shadow-md text-lg m-2 transition ease-out">
+            ↶
+        </button>
 
         <button onClick={() => handleOperator(percent.icon)} className="w-15 h-15 p-4 rounded-full text-red-500 cursor-pointer hover:bg-slate-400 shadow-md text-lg m-2 transition ease-out">
             {percent.icon}
