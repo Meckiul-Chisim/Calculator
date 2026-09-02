@@ -22,7 +22,7 @@ const divide = {
     icon: "÷"
 }
 
-const FirstRows = ({setDisplay, setResult, handleOperator}) => {
+const FirstRows = ({setDisplay, setResult, handleOperator, setLastInput}) => {
   return (
     <div className='w-full flex justify-evenly items-center'>
         {rows.map((row) => (
@@ -30,6 +30,7 @@ const FirstRows = ({setDisplay, setResult, handleOperator}) => {
                 if(row.name === "allClear"){
                     setDisplay("00");
                     setResult("")
+                    setLastInput("number")
                 } else if (row.name === "delete"){
                     setDisplay((display) => {
                         const newDisplay = display.slice(0, -1)
